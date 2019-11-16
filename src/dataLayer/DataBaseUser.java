@@ -6,7 +6,7 @@ public class DataBaseUser {
 
     //JDBC driver name and database URL
     static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-    static final String DB_URL = "jdbc:mysql://localhost/WebAppTutorial";
+    static final String DB_URL = "jdbc:mysql://localhost/WatajuCustomerManagement";
 
     //Database credentials
     static final String USER_NAME = "ken";
