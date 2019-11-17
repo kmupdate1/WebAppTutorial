@@ -2,46 +2,30 @@ package DAO;
 
 import entity.Customer;
 
+import java.net.ConnectException;
 import java.sql.*;
 
 public class CustomerDAO {
 
     private Connection connection;
-    private String server;
-    private String userName;
-    private String userPassword;
 
-    public CustomerDAO(String server, String userName, String userPassword) {
-        this.server = server;
-        this.userName = userName;
-        this.userPassword = userPassword;
-    }
-
-    public connect() throws SQLException {
-        String serverURL = "jdbc:mysql://" + server + ":3306/flm";
-        //接続のためのAPI利用
-        connection = DriverManager.getConnection(serverURL, userName, userPassword);
-    }
-
-    public close() throws SQLException{
-        if ( connection != null ) {
-            connection.close();
-        }
+    public CustomerDAO(Connection connection) {
+        this.connection = connection;
     }
 
     public Customer getCustomer(int customersId) throws SQLException{
         ResultSet resultSet = null;
         PreparedStatement statement = null;
         Customer customer = null;
-        String sql = "SELECT * FROM customers where customers_id=?";
+        String sql = "SELECT * FROM customers WHERE customers_id = ?";
 
         try {
             statement = connection.prepareStatement(sql);
             statement.setInt(1, customersId);
             resultSet = statement.executeQuery();
 
-            if ( resultSet.next() ) {
-                customer = new Customer();
+            customer = new Customer();
+            while ( resultSet.next() ) {
                 customer.setCustomersId(resultSet.getInt(1));
                 customer.setCustomersName(resultSet.getString(2));
                 customer.setCustomersAge(resultSet.getInt(3));
@@ -52,6 +36,8 @@ public class CustomerDAO {
                 customer.setCustomersCreatedAt(resultSet.getDate(8));
                 customer.setCustomersUpdatedAt(resultSet.getDate(9));
             }
+        } catch (SQLException e) {
+            e.printStackTrace();
         } finally {
             if ( resultSet != null ) {
                 resultSet.close();
