@@ -4,14 +4,14 @@ import entity.Customer;
 
 import java.sql.*;
 
-public class CustomersDAO {
+public class CustomerDAO {
 
     private Connection connection;
     private String server;
     private String userName;
     private String userPassword;
 
-    public CustomersDAO(String server, String userName, String userPassword) {
+    public CustomerDAO(String server, String userName, String userPassword) {
         this.server = server;
         this.userName = userName;
         this.userPassword = userPassword;
