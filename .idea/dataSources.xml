@@ -7,11 +7,5 @@
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://localhost:3306/WatajuCustomerManagement</jdbc-url>
     </data-source>
-    <data-source source="LOCAL" name="jdbc:mysql://localhost:3306/WebAppTutorial" uuid="658a9961-43cc-4104-ae11-0bc298414137">
-      <driver-ref>mysql.8</driver-ref>
-      <synchronize>true</synchronize>
-      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://localhost:3306/WebAppTutorial</jdbc-url>
-    </data-source>
   </component>
 </project>
