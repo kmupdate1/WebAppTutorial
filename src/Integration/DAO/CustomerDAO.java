@@ -1,8 +1,7 @@
-package DAO;
+package Integration.DAO;
 
-import entity.Customer;
+import Entity.Customer;
 
-import java.net.ConnectException;
 import java.sql.*;
 
 public class CustomerDAO {
