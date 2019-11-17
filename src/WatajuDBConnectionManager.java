@@ -15,7 +15,6 @@ public class WatajuDBConnectionManager {
             e.printStackTrace();
             throw e;
         }
-
         return connection;
     }
 }
