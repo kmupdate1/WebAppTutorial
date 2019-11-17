@@ -1,8 +1,10 @@
-package BussinessLogic;
+package BusinessLogic;
 
 import Entity.Customer;
 import Integration.DAO.CustomerDAO;
 import Integration.WatajuDBConnectionManager;
+
+import Exception.SalesSystemException;
 
 import java.sql.*;
 
