@@ -2,6 +2,10 @@
   <library name="Java EE 6">
     <CLASSES>
       <root url="jar:///Applications/System/apache-tomcat-9.0.26/lib/servlet-api.jar!/" />
+      <root url="jar:///Applications/System/taglibs-standard-compat-1.2.5.jar!/" />
+      <root url="jar:///Applications/System/taglibs-standard-impl-1.2.5.jar!/" />
+      <root url="jar:///Applications/System/taglibs-standard-jstlel-1.2.5.jar!/" />
+      <root url="jar:///Applications/System/taglibs-standard-spec-1.2.5.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
