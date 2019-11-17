@@ -25,6 +25,7 @@ public class CustomerDAO {
 
             customer = new Customer();
             while ( resultSet.next() ) {
+                // 存在しないカラムがあった場合の考慮も必要
                 customer.setCustomersId(resultSet.getInt(1));
                 customer.setCustomersName(resultSet.getString(2));
                 customer.setCustomersAge(resultSet.getInt(3));
